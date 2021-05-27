@@ -3,6 +3,7 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 const imageminJPEGRecompress = require("imagemin-jpeg-recompress");
 const imageminPngquant = require("imagemin-pngquant");
 const imageminZopfli = require("imagemin-zopfli");
+const imageminGifsicle = require("imagemin-gifsicle");
 const imageminSvgo = require("imagemin-svgo");
 const { extendDefaultPlugins } = require("svgo");
 const c = require("ansi-colors");
@@ -11,7 +12,7 @@ console.log("-----------------------");
 console.log(c.bgBlue.white("Optimizing in process... Please wait 😃"));
 console.log("-----------------------");
 (async () => {
-  await imagemin(["src/**/*.{jpg,jpeg,png,gif,tiff,svg}"], {
+  await imagemin(["src/**/*.{jpg,jpeg,png,gif,svg}"], {
     destination: "optimized",
     plugins: [
       //--------------
@@ -37,6 +38,11 @@ console.log("-----------------------");
        *
        */
       // imageminJPEGRecompress({ target: 0.7 }),
+
+      //--------------
+      // For GIF
+      //--------------
+      imageminGifsicle({ optimizationLevel: 1 }),
 
       //--------------
       // For SVG
