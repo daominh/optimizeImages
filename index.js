@@ -29,13 +29,14 @@ console.log("-----------------------");
       //--------------
       // For JPG + JPEG
       //--------------
-      // imageminMozjpeg({ quality: 70 }),
+      imageminMozjpeg({ quality: 70 }),
       /**
        *
        * * Sometimes imageminMozjpeg() make your image become larger because it has a bug
        * * In that case, comment it out and uncomment imageminJPEGRecompress() below and use this instead.
+       *
        */
-      imageminJPEGRecompress({ target: 0.7 }),
+      // imageminJPEGRecompress({ target: 0.7 }),
 
       //--------------
       // For SVG
