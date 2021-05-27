@@ -3,3 +3,5 @@ node_modules/
 package-lock.json
 src/*
 optimize/*
+!src/this_is_for_commit_empty_folder_delete_it
+!optimized/this_is_for_commit_empty_folder_delete_it
